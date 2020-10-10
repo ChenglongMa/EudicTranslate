@@ -1,0 +1,23 @@
+{
+    "name": "eudic Translate",
+    "identifier": "pantherbar.eudic",
+    "icon": "eudic.png",
+    "actions": [
+        {
+            "title": "EuDic Translate",
+            "icon": "eudic.png",
+            "batchFile": null,
+            "keyCombo": null,
+            "powershellFile": "script.ps1",
+            "pythonFile": null,
+            "regEx": null,
+            "options": [{
+                "identifier": "TextProcess",
+                "values": {
+                    "自动分段": "process",
+                    "原始文本": "initial"
+                }
+            }]
+        }
+    ]
+}
