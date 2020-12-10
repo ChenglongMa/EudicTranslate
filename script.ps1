@@ -11,6 +11,7 @@ SaladictTranslation extension for Pantherbar——By Pencilq
 
 # 自定义快捷键，自定义快捷键说明 https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys?view=netframework-4.8#remarks
 # 比如 Alt+l 为 "%l" ; Ctrl+l 为 "^l" ; Shift+l 为 "+l" ; Alt+Shift+l 为 "%+l"
+# TODO: Set your own custom shortcut from 设置=>快捷键=>显示词典主窗口
 $ShortCut = "^%9"
 
 # 文本段落正则匹配
@@ -127,16 +128,18 @@ if ($TextProcess -eq "process") {
 elseif ($TextProcess -eq "initial") {
     TextCopy
 }
-$eudic = Get-Process eudic -ErrorAction SilentlyContinue
-if (!$eudic) {
-    Start-Process -FilePath "C:\\Program Files (x86)\\eudic\\eudic.exe"
-    Start-Sleep -Seconds 3
-}
-while (!$wshell.AppActivate((get-process eudic).MainWindowTitle)) {
-    $wshell.SendKeys($ShortCut)
-    Start-Sleep -Seconds .5
-}
-Start-Sleep -Seconds .2
+# $eudic = Get-Process eudic -ErrorAction SilentlyContinue
+# if (!$eudic) {
+#     Start-Process -FilePath "C:\\Program Files (x86)\\eudic\\eudic.exe"
+#     Start-Sleep -Seconds 3
+# }
+# while (!$wshell.AppActivate((get-process eudic).MainWindowTitle)) {
+#     $wshell.SendKeys($ShortCut)
+#     Start-Sleep -Seconds .5
+# }
+# & "C:\\Program Files (x86)\\eudic\\eudic.exe"
+$wshell.SendKeys($ShortCut)
+Start-Sleep -Seconds .5
 $wshell.SendKeys("^v~")
 
 
