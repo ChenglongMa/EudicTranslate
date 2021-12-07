@@ -1,3 +1,5 @@
 .tmp/
 *.zip
 *.pbar
+*.ahk
+PSTools/

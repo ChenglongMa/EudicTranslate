@@ -130,7 +130,7 @@ elseif ($TextProcess -eq "initial") {
 }
 # $eudic = Get-Process eudic -ErrorAction SilentlyContinue
 # if (!$eudic) {
-#     Start-Process -FilePath "C:\\Program Files (x86)\\eudic\\eudic.exe"
+#     Start-Process -FilePath "C:\\Program Files (x86)\\eudic\\eudic.exe" -Wait -NoNewWindow
 #     Start-Sleep -Seconds 3
 # }
 # while (!$wshell.AppActivate((get-process eudic).MainWindowTitle)) {
@@ -139,7 +139,7 @@ elseif ($TextProcess -eq "initial") {
 # }
 # & "C:\\Program Files (x86)\\eudic\\eudic.exe"
 $wshell.SendKeys($ShortCut)
-Start-Sleep -Seconds .5
-$wshell.SendKeys("^v~")
+# Start-Sleep -Seconds .5
+# $wshell.SendKeys("^v~")
 
 
